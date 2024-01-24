@@ -1,0 +1,22 @@
+.navBar {
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    grid-area: n;
+    background-color: yellow;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: dimgray;
+    gap: 20px;
+    text-align: center;
+}
+
+.active {
+    font-weight: 700;
+}
