@@ -1,15 +1,16 @@
 import React, {FC}  from "react"
 import style from "./NavBar.module.css"
+import { NavLink } from "react-router-dom"
 
 export const NavBar:FC = () => {
 
     return(
         <nav className={style.navBar}>
            <ul className={style.menu}>
-                <li className={style.item}>Profile</li>
-                <li className={`${style.item} ${style.active}`}>Messages</li>
-                <li className={style.item}>Users</li>
-                <li className={style.item}>Setting</li>
+                <li className={style.item}><NavLink to="/profile">Profile</NavLink></li>
+                <li className={`${style.item} ${style.active}`}><NavLink to="/messages">Messages</NavLink></li>
+                <li className={style.item}><NavLink to="/users">Users</NavLink></li>
+                <li className={style.item}><NavLink to="/setting">Setting</NavLink></li>
            </ul> 
         </nav>
     )
