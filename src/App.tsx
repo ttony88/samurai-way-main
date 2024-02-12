@@ -5,6 +5,8 @@ import { NavBar } from './components/NavBar/NavBar';
 import { Profile } from './Profile/Profile';
 import { Messages } from './components/Messages/Messages';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { Users } from './components/Users/Users';
+import { Setting } from './components/Setting/Setting';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <div className="content">
           <Route path={"/profile"} component={Profile} />
           <Route path={"/messages"} component={Messages} />
+          <Route path={"/users"} component={Users} />
+          <Route path={"/setting"} component={Setting} />
         </div>
       </div>
     </BrowserRouter>
