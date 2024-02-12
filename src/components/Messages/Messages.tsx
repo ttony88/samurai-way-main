@@ -8,18 +8,26 @@ type MessagesProps = {
 }
 export const Messages:FC<MessagesProps> = (props) => {
 
+    const dialogs = [
+        {id: '1', title: 'Anton'},
+        {id: '2', title: 'Dasha'},
+        {id: '3', title: 'Sava'},
+        {id: '4', title: 'Rita'},
+    ]
+
+    const messages = [
+        {id: '1', text: 'hi!'},
+        {id: '2', text: 'hi, how are you?'},
+        {id: '3', text: 'good'},
+    ]
+
     return(
         <div className={style.dialogsPage}>
             <div className={style.dialogs}>
-                <Dialog id='1' title='Anton' />
-                <Dialog id='2' title='Dasha' />
-                <Dialog id='3' title='Sava' />
-                <Dialog id='4' title='Rita' />
+                {dialogs.map(d => <Dialog key={d.id} id={d.id} title={d.title} />)}
             </div>
             <div className={style.messages}>
-                <MessagesItem text='hi!' />
-                <MessagesItem text='hi, how are you?' />
-                <MessagesItem text='good' />
+                {messages.map(m => <MessagesItem text={m.text} />)}
             </div>
         </div>
     )
