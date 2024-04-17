@@ -1,0 +1,13 @@
+.friends {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.myFrends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.myFrends span {
+    margin-bottom: 10px;
+}

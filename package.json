@@ -57,15 +57,15 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.12",
-    "@storybook/addon-interactions": "^7.6.12",
-    "@storybook/addon-links": "^7.6.12",
+    "@storybook/addon-essentials": "7.6.12",
+    "@storybook/addon-interactions": "7.6.12",
+    "@storybook/addon-links": "7.6.12",
     "@storybook/addon-onboarding": "1.0.11",
-    "@storybook/blocks": "^7.6.12",
-    "@storybook/preset-create-react-app": "^7.6.12",
-    "@storybook/react": "^7.6.12",
-    "@storybook/react-webpack5": "^7.6.12",
-    "@storybook/test": "^7.6.12",
+    "@storybook/blocks": "7.6.12",
+    "@storybook/preset-create-react-app": "7.6.12",
+    "@storybook/react": "7.6.12",
+    "@storybook/react-webpack5": "7.6.12",
+    "@storybook/test": "7.6.12",
     "@types/node": "16.7.13",
     "@types/react": "17.0.20",
     "@types/react-dom": "17.0.9",
@@ -74,9 +74,9 @@
     "@types/react-test-renderer": "17.0.1",
     "@types/redux-form": "8.3.3",
     "@types/uuid": "8.3.4",
-    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-storybook": "0.6.15",
     "prop-types": "15.8.1",
-    "storybook": "^7.6.12",
+    "storybook": "7.6.12",
     "webpack": "5.90.1"
   }
 }

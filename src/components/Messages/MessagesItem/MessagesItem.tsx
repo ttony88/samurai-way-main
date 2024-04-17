@@ -1,4 +1,4 @@
-import React, {FC}  from 'react'
+import React, { FC }  from 'react'
 import style from './MessagesItem.module.css'
 
 type MessagesItemProps = {

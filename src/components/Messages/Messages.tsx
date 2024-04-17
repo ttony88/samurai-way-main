@@ -1,34 +1,48 @@
-import React, {FC}  from 'react'
+import React, {ChangeEvent, FC, useState}  from 'react'
 import style from './Messages.module.css'
 import { Dialog } from './Dialog/Dialog'
 import { MessagesItem } from './MessagesItem/MessagesItem'
+import { connect } from 'react-redux'
+import { DialogType, MessageType, addMessage } from '../../redux/messageReducer'
+import { StateType } from '../../redux/store'
 
 type MessagesProps = {
-    
+    dialogs: DialogType[]
+    messages: MessageType[]
+    addMessage: (text: string) => void
 }
 export const Messages:FC<MessagesProps> = (props) => {
 
-    const dialogs = [
-        {id: '1', title: 'Anton'},
-        {id: '2', title: 'Dasha'},
-        {id: '3', title: 'Sava'},
-        {id: '4', title: 'Rita'},
-    ]
+    const [textMessage, setTextMessage] = useState('')
 
-    const messages = [
-        {id: '1', text: 'hi!'},
-        {id: '2', text: 'hi, how are you?'},
-        {id: '3', text: 'good'},
-    ]
+    const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setTextMessage(e.currentTarget.value)
+    }
+
+    const onClickHandler = () => {
+        props.addMessage(textMessage)
+        setTextMessage('')
+    }
 
     return(
         <div className={style.dialogsPage}>
             <div className={style.dialogs}>
-                {dialogs.map(d => <Dialog key={d.id} id={d.id} title={d.title} />)}
+                {props.dialogs.map(d => <Dialog key={d.id} id={d.id} title={d.title} />)}
             </div>
             <div className={style.messages}>
-                {messages.map(m => <MessagesItem text={m.text} />)}
+                <div className={style.form}>
+                    <textarea onChange={onChangeHandler} value={textMessage} />
+                    <button onClick={onClickHandler}>add message</button>
+                </div>
+                {props.messages.map(m => <MessagesItem key={m.id} text={m.text}/>)}
             </div>
         </div>
     )
 }
+
+const mapStateToProps = (state: StateType) => ({
+    dialogs: state.messagePage.dialogs,
+    messages: state.messagePage.messages,
+})
+
+export default connect(mapStateToProps, {addMessage})(Messages)
